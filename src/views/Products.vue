@@ -1,7 +1,7 @@
 <template>
   <div class="products mx-5 ">
     <h1 class="font-weight-light my-6">Products</h1>
-      <v-tabs fixed-tabs class="font-weight-light mx-5">
+      <v-tabs class="font-weight-light mx-5">
         <v-tab v-for="item in items" :key="item">
           {{ item }}
         </v-tab>

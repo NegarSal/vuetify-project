@@ -4,7 +4,7 @@
     <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title >
         <span class=" blue--text "> NEWS:</span>
-        <span class="font-weight-light">  Simplified Kubernetes Support</span>
+        <span class="font-weight-light"> Simplified Kubernetes Support</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn flat color="grey">

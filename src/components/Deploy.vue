@@ -102,16 +102,36 @@
 <!--Additional Features-->
   <h2 class="my-5">Additional Features</h2>
    <v-container fluid>
-    <v-checkbox label="Enable IPv6"></v-checkbox>
-    <v-checkbox label="Enable Auto Backups" append-icon="mdi-help-circle"></v-checkbox>
-    <v-checkbox label="Enable DDOS Protection"></v-checkbox>
-    <v-checkbox label="Enable Private Networking"></v-checkbox>
+    <v-checkbox label="Enable IPv6">
+      <template v-slot:prepend >
+        <v-icon v-on="on">
+          mdi-help-circle-outline
+        </v-icon>   
+      </template>
+    </v-checkbox>
+    <v-checkbox>
+      <template v-slot:label>
+        <div>Enable<strong class="primary--text">Auto Backups</strong></div>
+      </template>
+    </v-checkbox>
+    <v-checkbox>
+      <template v-slot:label>
+        <div>Enable<strong class="primary--text">DDOS Protection</strong></div>
+      </template>
+      <template v-slot:prepend >
+        <v-icon v-on="on">
+          mdi-help-circle-outline
+        </v-icon>   
+      </template>
+    </v-checkbox>
+    <v-checkbox label="Enable Private Networking">
+      <template v-slot:prepend >
+        <v-icon v-on="on">
+          mdi-help-circle-outline
+        </v-icon>   
+      </template>
+    </v-checkbox>
    </v-container>
-<v-radio value="Duckduckgo">
-        <template v-slot:label>
-          <div>Definitely <strong class="primary--text">Duckduckgo</strong></div>
-        </template>
-      </v-radio>
 
 <!--Startup Script-->
   <h2 class="my-5">Startup Script <a>( Manage )</a> </h2>
@@ -121,7 +141,7 @@
         <v-card  class="ma-3">
          <v-list-item >
            <v-list-item-avatar>
-            <v-btn color="grey lighten-2" fab >
+            <v-btn color="grey lighten-2" fab  >
              <v-icon>mdi-plus</v-icon>
             </v-btn> 
            </v-list-item-avatar>
@@ -139,27 +159,33 @@
 <!--SSH Keys-->
   <h2 class="my-5">SSH Keys <a>( Manage )</a> </h2>
    <v-container class="my-5">
-      <v-layout row wrap>
-       <v-flex  xs12 sm6 md4 lg3>
-        <v-card  class="ma-3">
-         <v-list-item >
-           <v-list-item-avatar>
-            <v-btn color="grey lighten-2" fab >
-             <v-icon>mdi-plus</v-icon>
-            </v-btn> 
-           </v-list-item-avatar>
-           <v-list-item-content>
-            <v-list-item-title>
-             <b>Add New</b> 
-            </v-list-item-title>
+    <v-row >
+     <v-col cols="12" sm="3">
+       <v-card width="300">
+         <v-list-item class="my-5" >
+           <v-btn class="my-4 mx-2"  fab color="blue" >
+            <v-icon> mdi-key-variant</v-icon>
+           </v-btn>
+            <v-list-item-content class="mx-5">
+           <v-list-item-title>Blenheim</v-list-item-title>
            </v-list-item-content>
          </v-list-item>
-         
-        </v-card>
-       </v-flex>
-     </v-layout>
+       </v-card>
+     </v-col>
+     <v-col cols="12" sm="3">
+       <v-card width="300">
+         <v-list-item class="my-5" >
+           <v-btn class="my-4 mx-2"  fab black color="white">
+            <v-icon dark> mdi-plus</v-icon>
+           </v-btn>
+         <v-list-item-content class="mx-5">
+         <v-list-item-title>Add New</v-list-item-title>
+        </v-list-item-content>
+        </v-list-item>
+       </v-card>
+      </v-col>
+    </v-row> 
     </v-container>
-   <div  class="black--text"><b>Blenheim</b></div>
 
 <!--Server Hostname&Label-->
   <h2 class="my-5">Server Hostname&Label</h2>
@@ -238,7 +264,6 @@ export default {
         {title: '320 GB SSD',p1:'$80/mo',p2:'$0.119/h',cpu:'6 CPU',m:'1024MB Memory',bw:'5000GB Bandwidth'},
         {title: '640  GB SSD',p1:'$160/mo',p2:'$0.238/h',cpu:'8 CPU',m:'1024MB Memory',bw:'6000GB Bandwidth'}
       ],
-        //SSH Keys
 
     })
 }

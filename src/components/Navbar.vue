@@ -13,7 +13,8 @@
          <span>Taner Temel</span>
       </v-btn>
     </v-toolbar>
-    <v-navigation-drawer app v-model="drawer" permanent width="100%" mini-variant
+<!--navigation-drawer-->
+     <v-navigation-drawer app v-model="drawer" permanent width="100%" mini-variant
           mini-variant-width="70" class="primary">
       <v-list>
         <v-list-item-title v-for="link in links" :key="link.text" router :to="link.route">
@@ -27,6 +28,7 @@
       </v-list>
     </v-navigation-drawer>
   </nav>
+  
 </template>
 
 
@@ -35,12 +37,14 @@ export default{
     data: () =>({
         drawer: false,
         links:[
-          {icon: 'md-dashboard', text:'Products' , route:'/'},
-          {icon: 'md-phone', text:'Billing' , route:'/Billing'},
-          {icon: 'Support', text:'Support' , route:'/Support'},
-          {icon: 'Affilliate', text:'Affilliate' , route:'/Affilliate'},
-          {icon: 'Account', text:'Account' , route:'/Account'},
+          {text:'' , avatar:'/Pro.png'},
+          {text:'Products' , avatar:'/a.png'},
+          {text:'Billing' , avatar:'/b.png'},
+          {text:'Support' , avatar:'/c.png'},
+          {text:'Affilliate' , avatar:'/d.png'},
+          {text:'Account' , avatar:'/e.png'},
         ],
+        
     })
 }
 </script>

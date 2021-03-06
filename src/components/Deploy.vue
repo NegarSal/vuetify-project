@@ -6,8 +6,13 @@
   <h2 class="my-5">Choose Server</h2>
     <v-container class="my-5">
      <v-layout row wrap>
-       <v-flex xs12 sm6 md4 lg3 v-for="item in server" :key="item.text">
-         <v-card class="text-center ma-3">
+       <v-flex xs12 sm6 md4 lg3 v-for="item in server" :key="item.text" @click="messages++">
+         <v-card class="text-center ma-3" >
+            <v-badge  :content="messages" :value="messages" color="blue" overlap>
+        <v-icon large right>
+         mdi-checkbox-marked
+        </v-icon>
+      </v-badge>
            <v-responsive class="pt-4">
              <v-list-item-avatar size="130">
                  <img :src="item.avatar">
@@ -102,9 +107,9 @@
 <!--Additional Features-->
   <h2 class="my-5">Additional Features</h2>
    <v-container fluid>
-    <v-checkbox label="Enable IPv6">
+    <v-checkbox label="Enable IPv6" >
       <template v-slot:prepend >
-        <v-icon v-on="on">
+        <v-icon v-on="on" left>
           mdi-help-circle-outline
         </v-icon>   
       </template>
@@ -138,14 +143,12 @@
    <v-container class="my-5">
      <v-layout row wrap>
        <v-flex  xs12 sm6 md4 lg3>
-        <v-card  class="ma-3">
-         <v-list-item >
-           <v-list-item-avatar>
-            <v-btn color="grey lighten-2" fab  >
-             <v-icon>mdi-plus</v-icon>
+        <v-card width="250">
+         <v-list-item class="my-5">
+            <v-btn class="my-4 mx-2"  fab black color="white" >
+             <v-icon dark>mdi-plus</v-icon>
             </v-btn> 
-           </v-list-item-avatar>
-           <v-list-item-content>
+          <v-list-item-content class="mx-5">
             <v-list-item-title>
              <b>Add New</b> 
             </v-list-item-title>
@@ -204,6 +207,12 @@
      </v-form>
    </v-container>
 
+<!--Footer-->
+
+   <v-btn color="primary" dark right>
+          Deploy Now
+        </v-btn>
+
   </div> 
 </template>
 
@@ -235,10 +244,10 @@ export default {
          {name :'Miami', sub:'United states',avatar:'/9.png'},
          {name :'Seattle', sub:'United states',avatar:'/9.png'},
          {name :'Sillicon Valley', sub:'United states',avatar:'/9.png'},
-         {name :'Toronto', sub:'Canada' ,avatar:'/.png'},
-         {name :'Tokyo',  sub:'Japan',avatar:'/.png'},
-         {name :'Singapore',  sub:'Singapore',avatar:'/.png'},
-         {name :'Sydney', sub:'Australia', avatar:'/.png'},
+         {name :'Toronto', sub:'Canada' ,avatar:'/18.png'},
+         {name :'Tokyo',  sub:'Japan',avatar:'/19.png'},
+         {name :'Singapore',  sub:'Singapore',avatar:'/21.png'},
+         {name :'Sydney', sub:'Australia', avatar:'/20.png'},
         ],
       //ServerType
         links: [
@@ -264,7 +273,9 @@ export default {
         {title: '320 GB SSD',p1:'$80/mo',p2:'$0.119/h',cpu:'6 CPU',m:'1024MB Memory',bw:'5000GB Bandwidth'},
         {title: '640  GB SSD',p1:'$160/mo',p2:'$0.238/h',cpu:'8 CPU',m:'1024MB Memory',bw:'6000GB Bandwidth'}
       ],
-
+      //Footer
+      messages: 0,
+        show: false,
     })
 }
 </script>

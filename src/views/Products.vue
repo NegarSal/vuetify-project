@@ -8,7 +8,7 @@
       </v-tabs>
       <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-          <v-btn to="../Deploy"  color="blue" fab dark small absolute right  v-bind="attrs"  v-on="on">
+          <v-btn to="../Deploy" color="blue" fab dark small absolute right  v-bind="attrs"  v-on="on">
             <v-icon>mdi-plus</v-icon>
           </v-btn> 
       </template>

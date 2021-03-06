@@ -1,7 +1,7 @@
 <template>
   <nav>
-<!--Navigation-drawer-->
-    <v-navigation-drawer app v-model="drawer" class="indigo" >
+<!--Nav drawer-->
+    <v-navigation-drawer app v-model="drawer" permanent width="70px" class="primary" >  
       <v-layout column align-center>
         <v-flex class="mt-1">
           <v-avatar size="50">
@@ -14,7 +14,7 @@
           <v-list-item v-for="item in links" :key="item.text" :to="item.url"  >
             <v-card flat class=" indigo mt-1"  >   
               <v-list-item flat class=" my-3" >
-                <v-img :src="item.avatar"   width="50" height="50" ></v-img>         
+                <v-img :src="item.avatar" width="50" height="50" ></v-img>         
               </v-list-item>  
               <v-card  class="text-center indigo white--text"  >
                 <h4>{{item.text}}</h4>
@@ -24,28 +24,21 @@
         </v-list>
       </v-layout>
     </v-navigation-drawer>
-<!---Navigation-drawer--->
-<!---Toolbar--->
-    <v-app-bar app >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar>
-<!----------Toolbar title-------------->
-            <v-toolbar-title >
-                 <span class="text-uppercase blue--text">News:</span>
-                 <span class="font-weight-light">Simplified Kubernetes Support</span>
-            </v-toolbar-title>
-            <v-spacer></v-spacer>
-<!------- User toolbar---------->
-            <v-toolbar-items class="hidden-sm-and-down"> 
-               <v-btn  class="white" flat><v-icon left flat>mdi-email</v-icon>
-               <v-icon left flat> mdi-account-circle</v-icon>
-               <v-btn class="white" flat>Taner Temel</v-btn>
-               <v-icon flat>mdi-menu-down</v-icon></v-btn>
-            </v-toolbar-items>
 
-        </v-toolbar>
-    </v-app-bar>
-
+<!--Toolbar-->
+    <v-toolbar app>
+    <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <v-toolbar-title >
+        <span class=" blue--text "> NEWS:</span>
+        <span class="font-weight-light"> Simplified Kubernetes Support</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn flat color="white">
+        <v-icon left>mdi-email</v-icon>
+        <v-icon left>mdi-account</v-icon>
+         <span>Taner Temel</span>
+      </v-btn>
+    </v-toolbar>
   </nav>
 </template>
 

@@ -1,15 +1,13 @@
 <template>
   <div class="billing">
    <h1 class="font-weight-light">Billing</h1> 
-
-   <v-container class="my-5">
+    <v-container class="my-5">
       content
     </v-container>
   </div>
 </template>
 
 <script>
-
 export default {
     
 }

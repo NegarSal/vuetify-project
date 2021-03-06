@@ -6,13 +6,8 @@
   <h2 class="my-5">Choose Server</h2>
     <v-container class="my-5">
      <v-layout row wrap>
-       <v-flex xs12 sm6 md4 lg3 v-for="item in server" :key="item.text" @click="messages++">
+       <v-flex xs12 sm6 md4 lg3 v-for="item in server" :key="item.text">
          <v-card class="text-center ma-3" >
-            <v-badge  :content="messages" :value="messages" color="blue" overlap>
-        <v-icon large right>
-         mdi-checkbox-marked
-        </v-icon>
-      </v-badge>
            <v-responsive class="pt-4">
              <v-list-item-avatar size="130">
                  <img :src="item.avatar">
@@ -74,9 +69,6 @@
            <v-list-item-title>
             <b>{{item.name}}</b> 
            </v-list-item-title>
-          <v-list-item-subtitle>
-            <b>{{item.sub}}</b>
-          </v-list-item-subtitle>
           </v-list-item-content>
          </v-list-item>
         </v-card>
@@ -94,7 +86,7 @@
               <div class=" black--text"><b>{{size.title}}</b></div>
               <div class=" blue--text"><h1>{{size.p1}}</h1></div>
               <div class="subheading grey--text my-2">{{size.p2}}</div>
-               <v-divider class="blue my-5" width="40"></v-divider>
+              <v-divider class="blue my-5" width="35"></v-divider>
               <div class="subheading grey--text"><b>{{size.cpu}}</b></div>
               <div class="subheading grey--text">{{size.m}}</div>
               <div class="subheading grey--text">{{size.bw}}</div>
@@ -107,9 +99,9 @@
 <!--Additional Features-->
   <h2 class="my-5">Additional Features</h2>
    <v-container fluid>
-    <v-checkbox label="Enable IPv6" >
-      <template v-slot:prepend >
-        <v-icon v-on="on" left>
+    <v-checkbox label="Enable IPv6">
+      <template v-slot:prepend>
+        <v-icon v-on="on" >
           mdi-help-circle-outline
         </v-icon>   
       </template>
@@ -139,7 +131,7 @@
    </v-container>
 
 <!--Startup Script-->
-  <h2 class="my-5">Startup Script <a>( Manage )</a> </h2>
+  <h2 class="my-5">Startup Script<small><a>( Manage )</a></small></h2>
    <v-container class="my-5">
      <v-layout row wrap>
        <v-flex  xs12 sm6 md4 lg3>
@@ -160,11 +152,11 @@
    </v-container>
    
 <!--SSH Keys-->
-  <h2 class="my-5">SSH Keys <a>( Manage )</a> </h2>
+  <h2 class="my-5">SSH Keys <small><a>( Manage )</a></small></h2>
    <v-container class="my-5">
     <v-row >
      <v-col cols="12" sm="3">
-       <v-card width="300">
+       <v-card width="250">
          <v-list-item class="my-5" >
            <v-btn class="my-4 mx-2"  fab color="blue" >
             <v-icon> mdi-key-variant</v-icon>
@@ -208,10 +200,17 @@
    </v-container>
 
 <!--Footer-->
-
-   <v-btn color="primary" dark right>
-          Deploy Now
-        </v-btn>
+ <template>
+   <v-card height="50px">
+     <v-footer>
+       <v-card width="100%" class="white text-center">
+         <v-btn to="./" color="primary" dark right absolute>
+           Deploy Now
+         </v-btn> 
+       </v-card>
+     </v-footer>
+    </v-card>
+ </template>
 
   </div> 
 </template>
@@ -274,8 +273,9 @@ export default {
         {title: '640  GB SSD',p1:'$160/mo',p2:'$0.238/h',cpu:'8 CPU',m:'1024MB Memory',bw:'6000GB Bandwidth'}
       ],
       //Footer
-      messages: 0,
-        show: false,
+     
     })
 }
 </script>
+
+ 
